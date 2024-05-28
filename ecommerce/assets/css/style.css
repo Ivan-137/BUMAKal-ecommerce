@@ -96,6 +96,7 @@ button:hover{
     margin-left: 5px;
 }
 
+
 @media only screen and (max-width: 990px){
     .nav-buttons{
         margin: 10px;
@@ -219,7 +220,7 @@ button:hover{
 }
 
 hr{
-    width: 1130px;
+    width: auto;
     height: 3px !important;
     opacity: 1 !important;
     background-color: #192a56;
@@ -483,3 +484,138 @@ th:last-child{
     color:#ff7300;
 }
 
+/* Register */
+#register-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid skyblue;
+}
+
+#register-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#register-form #register-btn {
+    background-color: skyblue;
+    color: #192a56;
+}
+
+#register-form #register-btn:hover{
+    background-color: #192a56;
+    color: skyblue;
+}
+
+#register-form #login-url{
+    color: skyblue;
+}
+
+#register-form #login-url:hover{
+    color:#ff7300;
+}
+
+/* Account */
+#account-form{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin: 5px auto;
+}
+
+#account-form #change-pass-btn{
+    color:#192a56;
+    background-color: skyblue;
+}
+
+#account-form #change-pass-btn:hover{
+    color: skyblue;
+    background-color: #192a56;
+}
+
+.account-info #orders-btn,#logout-btn{
+    color:skyblue;
+    text-decoration: none;
+}
+
+/* Orders */
+
+.orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders .product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orders th{
+    text-align: left;
+    padding: 5px 10px;
+    color: #192a56;
+    background-color:skyblue;
+    text-align: left;
+}
+
+.orders th:nth-child(2){
+    text-align: right;
+}
+
+
+.orders td{
+    padding: 10px 20px;
+}
+
+.orders td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+/* Checkout */
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 48%;
+    margin: 10px auto;
+}
+
+#checkout-form .checkout-large-element{
+    width: 97%;
+}
+
+#checkout-form .checkout-btn-container{
+    margin: 10px;
+    text-align: right;
+    margin-right: 40px;
+}
+
+#checkout-form #checkout-btn{
+    color:#192a56;
+    background-color: skyblue;
+}
+
+#checkout-form #checkout-btn:hover{
+    color:#ff7300;
+    background-color:#192a56;
+
+}
+
+/* Contact Us */
+
+#contact span{
+    color:#ff7300;
+}
+
+#contact span:hover{
+    color:skyblue;
+}
+
+#contact h3{
+    color:#192a56;
+}
