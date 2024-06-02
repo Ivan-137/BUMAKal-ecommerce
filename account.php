@@ -119,10 +119,10 @@ if(isset($_POST['change_password'])){
                 <p class="text-center"style="color:green"><?php if(isset($_GET['message'])){ echo $_GET['error'];}?></p>
                 <hr class="mx-auto"> 
                 <div class="account-info">
-                    <p>Name <span>Ivan</span></p>
-                    <p>Email <span>ivan@gmail.com</span></p>
-                    <p><a href="" id="orders-btn">Your Orders</a></p>
-                    <p><a href="" id="logout-btn">Logout</a></p>
+                    <p>Name<span> <?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name'];} ?></span></p>
+                    <p>Email <span> <?php if(isset($_SESSION['username'])){ echo $_SESSION['username'];} ?></span></p>
+                    <p><a href="#orders" id="orders-btn">Your Orders</a></p>
+                    <p><a href="account.php?logout=1" id="logout-btn">Logout</a></p>
                 </div>
             </div>
 
