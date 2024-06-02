@@ -23,7 +23,7 @@
           <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="shop.html">Shop</a>
@@ -39,11 +39,11 @@
 
 
               <li class="nav-item">
-                <a class="nav-link" href="cart.html">Cart</a>
+                <a class="nav-link" href="cart.php">Cart</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="account.html">Account</a>
+                <a class="nav-link" href="account.php">Account</a>
               </li>
 
 
@@ -132,7 +132,7 @@
             </div>
             <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
             <h4 class="p-price">Php <?php echo $row['product_price']; ?> </h4>
-            <button class="buy-btn">Buy Now</button>
+            <a href="<?php echo "select_item.php?product_id=".$row['product_id'];?>"> <button class="buy-btn">Buy Now</button> </a>
           </div>
 
           <?php } ?>
@@ -157,61 +157,26 @@
           <p>Checkout the latest merch releases.</p>
         </div>
         <div class="row mx-auto container-fluid">
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Shirt1.jpg" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">BU Shirt (White)</h5>
-            <h4 class="p-price">Php 280.00 </h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
 
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Shirt2.jpg" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">BU Tribal Designed Tee</h5>
-            <h4 class="p-price">Php 280.00 </h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+        <?php include('server/get_merch.php'); ?>
 
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Shirt3.jpg" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Marketero T-Shirt</h5>
-            <h4 class="p-price">Php 270.00 </h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+        <?php while($row = $merch_products->fetch_assoc()) { ?>
+    <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" />
+        <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+        <h4 class="p-price">Php <?php echo $row['product_price']; ?></h4>
+        <a href="select_item.php"> <button class="buy-btn">Buy Now</button> </a>
+    </div>
+          <?php } ?>
 
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Shirt4.jpg" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Animeytor Shirt</h5>
-            <h4 class="p-price">Php 280.00 </h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+
 
         </div>
       </section>
@@ -224,8 +189,12 @@
           <p>Checkout the latest University Accessories.</p>
         </div>
         <div class="row mx-auto container-fluid">
+
+        <?php include('server/get_accessories.php'); ?>
+
+        <?php while($row = $accessories_products->fetch_assoc()) { ?>
           <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Totebag.jpg" />
+            <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" />
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -233,53 +202,13 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h5 class="p-name">Season Totebag</h5>
-            <h4 class="p-price">Php 200.00 </h4>
-            <button class="buy-btn">Buy Now</button>
+            <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+            <h4 class="p-price">Php <?php echo $row['product_price']; ?> </h4>
+            <a href="select_item.php"> <button class="buy-btn">Buy Now</button> </a>
           </div>
 
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/BU Stickers.jpg" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">BU Stickers</h5>
-            <h4 class="p-price">Php 15.00 / pc</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/BUP_Lanyard2.png" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">BUP Lanyard</h5>
-            <h4 class="p-price">Php 120.00 </h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class ="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Totebag2.jpg" />
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Marketero Totebag</h5>
-            <h4 class="p-price">Php 220.00 </h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
+          <?php } ?>
+          
         </div>
       </section>
 
@@ -346,7 +275,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+      </footer>
     
 
   
